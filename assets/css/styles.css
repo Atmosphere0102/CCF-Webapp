@@ -1,0 +1,117 @@
+/* Custom Styles for CCF */
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #fdfbf7;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #d4af37;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #b59021;
+}
+
+/* Glassmorphism Utilities */
+.glass {
+    background: rgba(255, 255, 255, 0.85);
+    /* Slightly more opaque for better readability */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Hero Background Animation */
+@keyframes kenBurns {
+    0% {
+        transform: scale(1) translate(0, 0);
+    }
+
+    50% {
+        transform: scale(1.1) translate(-2%, -1%);
+    }
+
+    100% {
+        transform: scale(1) translate(0, 0);
+    }
+}
+
+.hero-animate {
+    animation: kenBurns 20s ease-in-out infinite alternate;
+}
+
+/* Enhanced Scroll Animations */
+.reveal {
+    opacity: 0;
+    transition: all 1s cubic-bezier(0.5, 0, 0, 1);
+    will-change: opacity, transform;
+}
+
+/* Slide Up */
+.reveal-up {
+    transform: translateY(50px);
+}
+
+/* Slide Left */
+.reveal-left {
+    transform: translateX(-50px);
+}
+
+/* Slide Right */
+.reveal-right {
+    transform: translateX(50px);
+}
+
+/* Zoom In */
+.reveal-zoom {
+    transform: scale(0.9);
+}
+
+/* Active State for Animations */
+.reveal.is-visible {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+}
+
+/* Hover Card Effect */
+.hover-card {
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+}
+
+.hover-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(88, 28, 44, 0.05);
+    /* Tint of wine color in shadow */
+}
+
+/* Text Selection */
+::selection {
+    background: #d4af37;
+    color: #fff;
+}
+
+/* Stagger Delays */
+.delay-100 {
+    transition-delay: 100ms;
+}
+
+.delay-200 {
+    transition-delay: 200ms;
+}
+
+.delay-300 {
+    transition-delay: 300ms;
+}

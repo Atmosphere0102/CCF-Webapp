@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christian Couples Forum (CCF) | Strengthening Marriages</title>
+    <meta name="description"
+        content="A faith-based marriage organization helping couples navigate intimacy, communication, and spiritual growth in a safe, confidential environment.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS (CDN for development/demo) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'ccf-cream': '#fdfbf7',
+                        'ccf-gold': '#d4af37',
+                        'ccf-wine': '#581c2c',
+                        'ccf-beige': '#f5f5dc',
+                        'ccf-text': '#2d3748',
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body class="bg-ccf-cream text-ccf-text font-sans antialiased overflow-x-hidden">
+
+    <!-- Navigation -->
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-300 glass" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#">
+                        <img src="assets/images/Logo.png" alt="CCF" class="h-20 w-auto">
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home"
+                            class="hover:text-ccf-gold px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</a>
+
+                        <!-- Dropdown Trigger -->
+                        <div class="relative group">
+                            <button
+                                class="hover:text-ccf-gold px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center focus:outline-none">
+                                About <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                            </button>
+                            <!-- Dropdown Menu -->
+                            <div
+                                class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top-left z-50">
+                                <a href="#about"
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-ccf-cream hover:text-ccf-wine">About
+                                    CCF</a>
+                                <a href="founder.html"
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-ccf-cream hover:text-ccf-wine">About
+                                    the Founder</a>
+                            </div>
+                        </div>
+
+                        <a href="#services"
+                            class="hover:text-ccf-gold px-3 py-2 rounded-md text-sm font-medium transition-colors">Help
+                            & Growth</a>
+                        <a href="#testimonials"
+                            class="hover:text-ccf-gold px-3 py-2 rounded-md text-sm font-medium transition-colors">Stories</a>
+                        <a href="#contact"
+                            class="bg-ccf-wine text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-opacity-90 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">Book
+                            Session</a>
+                    </div>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" id="mobile-menu-button"
+                        class="inline-flex items-center justify-center p-2 rounded-md text-ccf-wine hover:text-ccf-gold focus:outline-none z-50 relative">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay (Redesigned) -->
+    <div id="mobile-menu-overlay"
+        class="fixed inset-0 bg-ccf-wine/95 z-40 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden flex flex-col justify-center items-center">
+        <div class="flex flex-col space-y-8 text-center">
+            <a href="#home"
+                class="text-white text-2xl font-medium hover:text-ccf-gold transition-colors mobile-link">Home</a>
+            <a href="#about"
+                class="text-white text-2xl font-medium hover:text-ccf-gold transition-colors mobile-link">About CCF</a>
+            <a href="founder.html"
+                class="text-white text-2xl font-medium hover:text-ccf-gold transition-colors mobile-link">About the
+                Founder</a>
+            <a href="#services"
+                class="text-white text-2xl font-medium hover:text-ccf-gold transition-colors mobile-link">Help &
+                Growth</a>
+            <a href="#testimonials"
+                class="text-white text-2xl font-medium hover:text-ccf-gold transition-colors mobile-link">Stories</a>
+        </div>
+        <div class="absolute bottom-10 w-full px-8">
+            <a href="#contact"
+                class="block w-full bg-white text-ccf-wine text-center font-bold py-4 rounded-full shadow-lg hover:bg-ccf-gold hover:text-white transition-all mobile-link">
+                Book a Session
+            </a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
+                alt="Couple holding hands" class="w-full h-full object-cover hero-animate">
+            <div class="absolute inset-0 bg-gradient-to-r from-ccf-wine/90 via-ccf-wine/60 to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white fade-in-section">
+            <div class="max-w-3xl">
+                <span class="block text-ccf-gold font-medium tracking-wider mb-4 uppercase text-sm">Faith-Based Marriage
+                    Support</span>
+                <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-6">
+                    Strengthening Marriages Through <span class="text-ccf-gold">Truth</span>, <span
+                        class="text-ccf-gold">Love</span> & <span class="text-ccf-gold">Intimacy</span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-200 mb-8 font-light leading-relaxed max-w-2xl">
+                    A safe, confidential space for real conversations about the challenges and joys of married life.
+                    From emotional disconnect to intimate growth, we walk with you.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#contact"
+                        class="px-8 py-4 bg-ccf-gold text-white rounded-full font-semibold hover:bg-yellow-600 transition-all shadow-lg hover:shadow-xl text-center transform hover:-translate-y-1">
+                        Book a Counseling Session
+                    </a>
+                    <a href="#about"
+                        class="px-8 py-4 border-2 border-white text-white rounded-full font-semibold hover:bg-white hover:text-ccf-wine transition-all text-center">
+                        Learn More
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce text-white">
+            <i class="fas fa-chevron-down text-2xl"></i>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="lg:w-1/2 reveal reveal-left">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1621574510427-463259844f2e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Couple walking" class="rounded-2xl shadow-2xl z-10 relative hover-card">
+                        <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-ccf-gold/20 rounded-full z-0"></div>
+                        <div class="absolute -top-6 -left-6 w-32 h-32 bg-ccf-wine/10 rounded-full z-0"></div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 reveal reveal-right delay-200">
+                    <h2 class="text-ccf-gold uppercase tracking-widest text-sm font-semibold mb-2">Who We Are</h2>
+                    <h3 class="text-3xl md:text-4xl font-bold text-ccf-wine mb-6">Restoring the Sacred Bond of Marriage
+                    </h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        The Christian Couples Forum (CCF) is dedicated to helping married couples navigate the
+                        complexities of life together. We believe that marriage is a tough but beautiful journey that
+                        requires intentionality, grace, and sometimes, a little help.
+                    </p>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        We provide a judgment-free zone where biblical principles meet practical application. Whether
+                        you are struggling with communication, intimacy, or in-law dynamics, our experienced counselors
+                        are here to guide you back to connection.
+                    </p>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center text-gray-700 reveal reveal-up delay-300">
+                            <i class="fas fa-check-circle text-ccf-gold mr-3"></i> Biblically grounded counsel
+                        </li>
+                        <li class="flex items-center text-gray-700 reveal reveal-up delay-300">
+                            <i class="fas fa-check-circle text-ccf-gold mr-3"></i> 100% Confidential sessions
+                        </li>
+                        <li class="flex items-center text-gray-700 reveal reveal-up delay-300">
+                            <i class="fas fa-check-circle text-ccf-gold mr-3"></i> Practical tools for growth
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What We Help With Section -->
+    <section id="services" class="py-20 bg-ccf-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal reveal-up">
+                <h2 class="text-ccf-wine text-3xl md:text-4xl font-bold mb-4">Areas of Focus</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">We address the real, often unspoken challenges in marriage
+                    with sensitivity and wisdom.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div
+                    class="bg-white p-8 rounded-2xl shadow-soft hover-card border-t-4 border-ccf-gold reveal reveal-up delay-100">
+                    <div
+                        class="w-14 h-14 bg-ccf-gold/10 rounded-full flex items-center justify-center text-ccf-gold text-2xl mb-6">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-ccf-wine mb-3">Intimacy & Sex</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Rediscover passion and physical connection in a healthy, respectful way. We address mismatched
+                        libidos, past trauma, and establishing a fulfilling intimate life.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div
+                    class="bg-white p-8 rounded-2xl shadow-soft hover-card border-t-4 border-ccf-wine reveal reveal-up delay-200">
+                    <div
+                        class="w-14 h-14 bg-ccf-wine/10 rounded-full flex items-center justify-center text-ccf-wine text-2xl mb-6">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-ccf-wine mb-3">Communication</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Learn to speak to be understood and listen to understand. Break cycles of silence, nagging, or
+                        misunderstanding.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div
+                    class="bg-white p-8 rounded-2xl shadow-soft hover-card border-t-4 border-ccf-gold reveal reveal-up delay-300">
+                    <div
+                        class="w-14 h-14 bg-ccf-gold/10 rounded-full flex items-center justify-center text-ccf-gold text-2xl mb-6">
+                        <i class="fas fa-users-slash"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-ccf-wine mb-3">Conflict Resolution</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Disagreements are normal; destruction is not. Learn healthy ways to resolve conflict without
+                        hurting each other.
+                    </p>
+                </div>
+
+                <!-- Card 4 -->
+                <div
+                    class="bg-white p-8 rounded-2xl shadow-soft hover-card border-t-4 border-ccf-wine reveal reveal-up delay-100">
+                    <div
+                        class="w-14 h-14 bg-ccf-wine/10 rounded-full flex items-center justify-center text-ccf-wine text-2xl mb-6">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-ccf-wine mb-3">In-Laws & Boundaries</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Navigating extended family dynamics while protecting the sanctity and priority of your own
+                        marriage.
+                    </p>
+                </div>
+
+                <!-- Card 5 -->
+                <div
+                    class="bg-white p-8 rounded-2xl shadow-soft hover-card border-t-4 border-ccf-gold reveal reveal-up delay-200">
+                    <div
+                        class="w-14 h-14 bg-ccf-gold/10 rounded-full flex items-center justify-center text-ccf-gold text-2xl mb-6">
+                        <i class="fas fa-sad-tear"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-ccf-wine mb-3">Emotional Disconnect</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Bridge the gap when you feel like roommates instead of soulmates. Rebuild emotional safety and
+                        trust.
+                    </p>
+                </div>
+
+                <!-- Card 6 -->
+                <div
+                    class="bg-white p-8 rounded-2xl shadow-soft hover-card border-t-4 border-ccf-wine reveal reveal-up delay-300">
+                    <div
+                        class="w-14 h-14 bg-ccf-wine/10 rounded-full flex items-center justify-center text-ccf-wine text-2xl mb-6">
+                        <i class="fas fa-dove"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-ccf-wine mb-3">Spiritual Bonding</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Grow together in faith. Learn effective ways to pray together and support each other's spiritual
+                        walk.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose CCF Section -->
+    <section class="py-20 bg-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-ccf-beige/30 skew-x-12 transform translate-x-20"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-10 lg:mb-0 reveal reveal-left">
+                    <h2 class="text-3xl md:text-4xl font-bold text-ccf-wine mb-6">Why Couples Trust Us</h2>
+                    <div class="space-y-6">
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <span
+                                    class="w-10 h-10 rounded-full bg-ccf-gold text-white flex items-center justify-center font-bold">1</span>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-xl font-semibold text-gray-800">Safe & Confidential</h4>
+                                <p class="text-gray-600 mt-1">We prioritize your privacy above all. What is shared here,
+                                    stays here.</p>
+                            </div>
+                        </div>
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <span
+                                    class="w-10 h-10 rounded-full bg-ccf-gold text-white flex items-center justify-center font-bold">2</span>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-xl font-semibold text-gray-800">Experienced Counselors</h4>
+                                <p class="text-gray-600 mt-1">Our team consists of mature, trained professionals who
+                                    understand marital dynamics.</p>
+                            </div>
+                        </div>
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <span
+                                    class="w-10 h-10 rounded-full bg-ccf-gold text-white flex items-center justify-center font-bold">3</span>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-xl font-semibold text-gray-800">Faith-Based Principles</h4>
+                                <p class="text-gray-600 mt-1">We don't just give advice; we look to the Word of God for
+                                    enduring wisdom and grace.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Image Grid -->
+                <div class="lg:w-1/2 lg:pl-12 reveal reveal-right">
+                    <div class="grid grid-cols-2 gap-4">
+                        <img src="https://images.unsplash.com/photo-1529634597503-139d3726d5c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                            alt="Happy couple" class="rounded-lg shadow-lg transform translate-y-8">
+                        <img src="https://images.unsplash.com/photo-1623150502742-6a849aa94bed?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                            alt="Holding hands" class="rounded-lg shadow-lg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-ccf-wine text-white relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-ccf-gold uppercase tracking-widest text-sm font-semibold mb-8">Testimonials</h2>
+            <h3 class="text-3xl font-bold mb-12">Healing Stories</h3>
+
+            <div class="relative min-h-[250px] flex items-center justify-center">
+                <!-- Slide 1 -->
+                <div
+                    class="testimonial-slide absolute inset-0 w-full transition-opacity duration-700 ease-in-out opacity-100 block">
+                    <div class="text-5xl text-ccf-gold mb-6 opacity-30">"</div>
+                    <p class="text-xl md:text-2xl font-light italic leading-relaxed mb-6">
+                        We were on the brink of divorce. The sessions at CCF helped us understand each other's needs in
+                        a way we never had before. It saved our marriage.
+                    </p>
+                    <div class="flex items-center justify-center space-x-4">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
+                            alt="Sarah" class="w-12 h-12 rounded-full border-2 border-ccf-gold">
+                        <div class="text-left">
+                            <p class="font-semibold text-ccf-gold">Sarah & James</p>
+                            <p class="text-xs text-gray-300">Married 7 Years</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div
+                    class="testimonial-slide absolute inset-0 w-full transition-opacity duration-700 ease-in-out opacity-0 hidden">
+                    <div class="text-5xl text-ccf-gold mb-6 opacity-30">"</div>
+                    <p class="text-xl md:text-2xl font-light italic leading-relaxed mb-6">
+                        Dealing with in-laws was causing so much friction. CCF gave us the tools to set boundaries
+                        lovingly. Our home is peaceful again.
+                    </p>
+                    <div class="flex items-center justify-center space-x-4">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
+                            alt="Michael" class="w-12 h-12 rounded-full border-2 border-ccf-gold">
+                        <div class="text-left">
+                            <p class="font-semibold text-ccf-gold">Michael & Rebecca</p>
+                            <p class="text-xs text-gray-300">Married 3 Years</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div
+                    class="testimonial-slide absolute inset-0 w-full transition-opacity duration-700 ease-in-out opacity-0 hidden">
+                    <div class="text-5xl text-ccf-gold mb-6 opacity-30">"</div>
+                    <p class="text-xl md:text-2xl font-light italic leading-relaxed mb-6">
+                        The intimacy workshop was eye-opening. We learned that physical connection starts with emotional
+                        safety. Highly recommend.
+                    </p>
+                    <div class="flex items-center justify-center space-x-4">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
+                            alt="David" class="w-12 h-12 rounded-full border-2 border-ccf-gold">
+                        <div class="text-left">
+                            <p class="font-semibold text-ccf-gold">David & Lisa</p>
+                            <p class="text-xs text-gray-300">Married 12 Years</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Events & Placeholder Store -->
+    <section id="events" class="py-20 bg-ccf-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-ccf-wine mb-10 text-center">Upcoming Events & Resources</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-2xl shadow-soft overflow-hidden group hover-card reveal reveal-scale">
+                    <div class="h-48 bg-gray-200 relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                            alt="Event">
+                        <div class="absolute top-4 right-4 bg-ccf-gold text-white px-3 py-1 rounded text-sm font-bold">
+                            FEB 28</div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold text-ccf-wine mb-2">Couples Retreat Weekend</h3>
+                        <p class="text-gray-600 mb-4">A weekend getaway focused on reconnection and spiritual renewal.
+                        </p>
+                        <a href="#contact"
+                            class="text-ccf-wine font-semibold hover:text-ccf-gold transition-colors">Register Interest
+                            →</a>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-white rounded-2xl shadow-soft overflow-hidden group hover-card reveal reveal-scale delay-200">
+                    <div class="h-48 bg-gray-200 relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                            alt="Books">
+                        <div class="absolute top-4 right-4 bg-gray-600 text-white px-3 py-1 rounded text-sm font-bold">
+                            COMING SOON</div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold text-ccf-wine mb-2">Books & Resources Store</h3>
+                        <p class="text-gray-600 mb-4">Curated books and guides on marriage, intimacy, and faith.</p>
+                        <span class="text-gray-400 font-semibold cursor-not-allowed">Store Opening Soon</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-ccf-cream rounded-3xl shadow-xl p-8 md:p-12 reveal reveal-up border border-gray-100">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl font-bold text-ccf-wine mb-4">Get in Touch</h2>
+                    <p class="text-gray-600">Start your journey to a stronger marriage today. All inquiries are strictly
+                        confidential.</p>
+                </div>
+
+                <form id="contact-form" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                            <input type="text" id="name" name="name"
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-ccf-gold focus:border-transparent outline-none transition-all"
+                                placeholder="John & Jane Doe">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email
+                                Address</label>
+                            <input type="email" id="email" name="email"
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-ccf-gold focus:border-transparent outline-none transition-all"
+                                placeholder="you@example.com">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="duration" class="block text-sm font-medium text-gray-700 mb-1">How long have you
+                            been married?</label>
+                        <select id="duration" name="duration"
+                            class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-ccf-gold focus:border-transparent outline-none transition-all bg-white">
+                            <option value="not-married">Not married yet</option>
+                            <option value="0-1">Less than 1 year</option>
+                            <option value="1-5">1 - 5 years</option>
+                            <option value="5-10">5 - 10 years</option>
+                            <option value="10+">10+ years</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="topic" class="block text-sm font-medium text-gray-700 mb-1">What would you like help
+                            with?</label>
+                        <select id="topic" name="topic"
+                            class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-ccf-gold focus:border-transparent outline-none transition-all bg-white">
+                            <option value="general">General Inquiry</option>
+                            <option value="intimacy">Intimacy & Sex</option>
+                            <option value="communication">Communication</option>
+                            <option value="conflict">Conflict Resolution</option>
+                            <option value="counseling">Private Counseling</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                        <textarea id="message" name="message" rows="4"
+                            class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-ccf-gold focus:border-transparent outline-none transition-all"
+                            placeholder="Tell us a little bit about what you're facing..."></textarea>
+                    </div>
+
+                    <div>
+                        <button type="submit"
+                            class="w-full bg-ccf-wine text-white font-bold py-4 rounded-lg hover:bg-opacity-90 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                            Send Message
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                <div>
+                    <span class="text-2xl font-bold tracking-wide text-white mb-4 block">CCF<span
+                            class="text-ccf-gold">.</span></span>
+                    <p class="text-gray-400 leading-relaxed text-sm">
+                        Building stronger, healthier, and God-honoring marriages through honest conversation and
+                        practical guidance.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-6 text-ccf-gold">Quick Links</h4>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li><a href="#about" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">Counseling Services</a></li>
+                        <li><a href="#events" class="hover:text-white transition-colors">Events</a></li>
+                        <li><a href="#contact" class="hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-6 text-ccf-gold">Connect</h4>
+                    <div class="flex space-x-4 mb-6">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-ccf-gold hover:text-white transition-all"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-ccf-gold hover:text-white transition-all"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-ccf-gold hover:text-white transition-all"><i
+                                class="fab fa-youtube"></i></a>
+                    </div>
+                    <p class="text-gray-500 text-xs">
+                        <i class="fas fa-lock mr-2"></i> All sessions and inquiries are 100% confidential.
+                    </p>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
+                <p>&copy; 2026 Christian Couples Forum. All rights reserved.</p>
+                <div class="mt-2 space-x-4">
+                    <a href="#" class="hover:text-gray-300">Privacy Policy</a>
+                    <a href="#" class="hover:text-gray-300">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
