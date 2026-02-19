@@ -130,3 +130,39 @@ html {
     border: none;
     transition: transform 0.3s ease, background-color 0.3s ease;
 }
+
+/* Quote icon */
+.testimonial-quote-icon {
+    display: block;
+    font-family: Georgia, serif;
+    font-size: 7rem;
+    line-height: 1;
+    color: #E07A5F;
+    opacity: 0.25;
+    margin-bottom: -1.5rem;
+    user-select: none;
+}
+
+/* Name block with flanking rules */
+.testimonial-name-block {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.testimonial-rule {
+    display: inline-block;
+    width: 40px;
+    height: 1px;
+    background-color: #E07A5F;
+    opacity: 0.7;
+}
+
+.testimonial-name {
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #E07A5F;
+}
