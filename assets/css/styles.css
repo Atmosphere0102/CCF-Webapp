@@ -12,16 +12,16 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-    background: #fdfbf7;
+    background: #F4F1DE;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #d4af37;
+    background: #E07A5F;
     border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #b59021;
+    background: #c25e3f;
 }
 
 /* Glassmorphism Utilities */
@@ -99,7 +99,7 @@ html {
 
 /* Text Selection */
 ::selection {
-    background: #d4af37;
+    background: #E07A5F;
     color: #fff;
 }
 
