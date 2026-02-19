@@ -420,6 +420,39 @@
                 </div>
             </div>
 
+            <!-- Controls: Prev / Dots / Next -->
+            <div class="flex items-center justify-center gap-6 mt-10">
+                <!-- Prev Button -->
+                <button id="testimonial-prev"
+                    class="w-10 h-10 rounded-full border-2 border-ccf-gold text-ccf-gold flex items-center justify-center hover:bg-ccf-gold hover:text-white transition-all duration-300 focus:outline-none">
+                    <i class="fas fa-chevron-left text-sm"></i>
+                </button>
+
+                <!-- Dot Indicators -->
+                <div id="testimonial-dots" class="flex gap-3">
+                    <button
+                        class="testimonial-dot w-3 h-3 rounded-full bg-ccf-gold transition-all duration-300 focus:outline-none"
+                        data-index="0"></button>
+                    <button
+                        class="testimonial-dot w-3 h-3 rounded-full bg-white/30 transition-all duration-300 focus:outline-none"
+                        data-index="1"></button>
+                    <button
+                        class="testimonial-dot w-3 h-3 rounded-full bg-white/30 transition-all duration-300 focus:outline-none"
+                        data-index="2"></button>
+                </div>
+
+                <!-- Next Button -->
+                <button id="testimonial-next"
+                    class="w-10 h-10 rounded-full border-2 border-ccf-gold text-ccf-gold flex items-center justify-center hover:bg-ccf-gold hover:text-white transition-all duration-300 focus:outline-none">
+                    <i class="fas fa-chevron-right text-sm"></i>
+                </button>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="mt-6 w-full max-w-xs mx-auto h-0.5 bg-white/20 rounded-full overflow-hidden">
+                <div id="testimonial-progress" class="h-full bg-ccf-gold rounded-full testimonial-progress-bar"></div>
+            </div>
+
         </div>
     </section>
 

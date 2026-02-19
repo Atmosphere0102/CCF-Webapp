@@ -59,30 +59,109 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Testimonial Carousel
-    const testimonials = document.querySelectorAll('.testimonial-slide');
-    let currentTestimonial = 0;
-    const totalTestimonials = testimonials.length;
+    const testimonialSlides = document.querySelectorAll('.testimonial-slide');
+    const testimonialDots = document.querySelectorAll('.testimonial-dot');
+    const prevBtn = document.getElementById('testimonial-prev');
+    const nextBtn = document.getElementById('testimonial-next');
+    const progressBar = document.getElementById('testimonial-progress');
+    let currentSlide = 0;
+    const totalSlides = testimonialSlides.length;
+    const slideDuration = 5000; // ms
+    let autoTimer = null;
+    let progressTimer = null;
 
-    const showTestimonial = (index) => {
-        testimonials.forEach((slide, i) => {
-            if (i === index) {
-                slide.classList.remove('hidden');
-                slide.classList.add('block', 'fade-in-active');
-            } else {
+    const goToSlide = (index) => {
+        // Hide current
+        testimonialSlides[currentSlide].style.opacity = '0';
+        testimonialSlides[currentSlide].style.pointerEvents = 'none';
+        setTimeout(() => {
+            testimonialSlides[currentSlide].classList.add('hidden');
+            testimonialSlides[currentSlide].classList.remove('block');
+
+            currentSlide = (index + totalSlides) % totalSlides;
+
+            testimonialSlides[currentSlide].classList.remove('hidden');
+            testimonialSlides[currentSlide].classList.add('block');
+            // Trigger reflow to enable transition
+            void testimonialSlides[currentSlide].offsetWidth;
+            testimonialSlides[currentSlide].style.opacity = '1';
+            testimonialSlides[currentSlide].style.pointerEvents = '';
+
+            // Update dots
+            testimonialDots.forEach((dot, i) => {
+                if (i === currentSlide) {
+                    dot.classList.add('bg-ccf-gold');
+                    dot.classList.remove('bg-white/30');
+                    dot.style.transform = 'scale(1.3)';
+                } else {
+                    dot.classList.remove('bg-ccf-gold');
+                    dot.classList.add('bg-white/30');
+                    dot.style.transform = 'scale(1)';
+                }
+            });
+        }, 350); // half of CSS transition duration
+
+        // Restart progress bar
+        restartProgress();
+    };
+
+    const restartProgress = () => {
+        if (progressBar) {
+            clearInterval(progressTimer);
+            progressBar.style.transition = 'none';
+            progressBar.style.width = '0%';
+            // Force reflow
+            void progressBar.offsetWidth;
+            progressBar.style.transition = `width ${slideDuration}ms linear`;
+            progressBar.style.width = '100%';
+        }
+    };
+
+    const startAuto = () => {
+        clearInterval(autoTimer);
+        autoTimer = setInterval(() => {
+            goToSlide(currentSlide + 1);
+        }, slideDuration);
+    };
+
+    if (totalSlides > 0) {
+        // Init first slide
+        testimonialSlides.forEach((slide, i) => {
+            slide.style.opacity = i === 0 ? '1' : '0';
+            slide.style.pointerEvents = i === 0 ? '' : 'none';
+            if (i !== 0) {
                 slide.classList.add('hidden');
-                slide.classList.remove('block', 'fade-in-active');
+                slide.classList.remove('block');
+            } else {
+                slide.classList.remove('hidden');
+                slide.classList.add('block');
             }
         });
-    };
 
-    const nextTestimonial = () => {
-        currentTestimonial = (currentTestimonial + 1) % totalTestimonials;
-        showTestimonial(currentTestimonial);
-    };
+        startAuto();
+        restartProgress();
 
-    if (totalTestimonials > 0) {
-        showTestimonial(0);
-        setInterval(nextTestimonial, 5000); // Change every 5 seconds
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => {
+                goToSlide(currentSlide - 1);
+                startAuto();
+            });
+        }
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                goToSlide(currentSlide + 1);
+                startAuto();
+            });
+        }
+        testimonialDots.forEach((dot) => {
+            dot.addEventListener('click', () => {
+                const idx = parseInt(dot.dataset.index, 10);
+                if (idx !== currentSlide) {
+                    goToSlide(idx);
+                    startAuto();
+                }
+            });
+        });
     }
 
     // Contact Form Validation

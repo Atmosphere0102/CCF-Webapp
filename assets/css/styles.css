@@ -115,3 +115,18 @@ html {
 .delay-300 {
     transition-delay: 300ms;
 }
+
+/* ── Testimonial Slider ── */
+.testimonial-slide {
+    transition: opacity 0.7s ease-in-out;
+}
+
+.testimonial-progress-bar {
+    width: 0%;
+}
+
+.testimonial-dot {
+    cursor: pointer;
+    border: none;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
