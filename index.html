@@ -82,6 +82,24 @@
 
                         <a href="#services"
                             class="hover:text-ccf-gold px-3 py-2 rounded-md text-sm font-medium transition-colors">Focus</a>
+
+                        <!-- Resources Dropdown -->
+                        <div class="relative group">
+                            <button
+                                class="hover:text-ccf-gold px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center focus:outline-none">
+                                Resources <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                            </button>
+                            <div
+                                class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top-left z-50">
+                                <a href="lessons.html"
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-ccf-cream hover:text-ccf-wine">Bible
+                                    Study Lessons</a>
+                                <a href="books.html"
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-ccf-cream hover:text-ccf-wine">Founder's
+                                    Books</a>
+                            </div>
+                        </div>
+
                         <a href="#testimonials"
                             class="hover:text-ccf-gold px-3 py-2 rounded-md text-sm font-medium transition-colors">Testimonials</a>
                         <a href="#contact"
@@ -101,21 +119,52 @@
 
     <!-- Mobile Menu Overlay (Redesigned) -->
     <div id="mobile-menu-overlay"
-        class="fixed inset-0 bg-ccf-wine/95 z-40 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden flex flex-col justify-center items-center">
-        <div class="flex flex-col space-y-8 text-center">
+        class="fixed inset-0 bg-ccf-wine/95 z-40 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden flex flex-col pt-24 px-8">
+        <div class="flex flex-col space-y-6">
             <a href="#home"
-                class="text-white text-2xl font-medium hover:text-ccf-gold transition-colors mobile-link">Home</a>
-            <a href="#about"
-                class="text-white text-2xl font-medium hover:text-ccf-gold transition-colors mobile-link">About CCF</a>
-            <a href="founder.html"
-                class="text-white text-2xl font-medium hover:text-ccf-gold transition-colors mobile-link">About the
-                Founder</a>
+                class="text-white text-xl font-medium hover:text-ccf-gold transition-colors mobile-link">Home</a>
+
+            <!-- About Dropdown -->
+            <div class="flex flex-col">
+                <button
+                    class="flex items-center justify-between text-white text-xl font-medium hover:text-ccf-gold transition-colors mobile-link mobile-dropdown-trigger focus:outline-none">
+                    About <i class="fas fa-chevron-down text-sm ml-2"></i>
+                </button>
+                <div
+                    class="mobile-dropdown-menu hidden flex flex-col space-y-4 mt-4 ml-4 border-l-2 border-ccf-gold/30 pl-4">
+                    <a href="#about"
+                        class="text-gray-300 text-lg hover:text-ccf-gold transition-colors mobile-link">About CCF</a>
+                    <a href="founder.html"
+                        class="text-gray-300 text-lg hover:text-ccf-gold transition-colors mobile-link">About the
+                        Founder</a>
+                </div>
+            </div>
+
             <a href="#services"
-                class="text-white text-2xl font-medium hover:text-ccf-gold transition-colors mobile-link">Focus</a>
+                class="text-white text-xl font-medium hover:text-ccf-gold transition-colors mobile-link">Focus</a>
+
+            <!-- Resources Dropdown -->
+            <div class="flex flex-col">
+                <button
+                    class="flex items-center justify-between text-white text-xl font-medium hover:text-ccf-gold transition-colors mobile-link mobile-dropdown-trigger focus:outline-none">
+                    Resources <i class="fas fa-chevron-down text-sm ml-2"></i>
+                </button>
+                <div
+                    class="mobile-dropdown-menu hidden flex flex-col space-y-4 mt-4 ml-4 border-l-2 border-ccf-gold/30 pl-4">
+                    <a href="lessons.html"
+                        class="text-gray-300 text-lg hover:text-ccf-gold transition-colors mobile-link">Bible Study
+                        Lessons</a>
+                    <a href="books.html"
+                        class="text-gray-300 text-lg hover:text-ccf-gold transition-colors mobile-link">Founder's
+                        Books</a>
+                </div>
+            </div>
+
             <a href="#testimonials"
-                class="text-white text-2xl font-medium hover:text-ccf-gold transition-colors mobile-link">Testimonials</a>
+                class="text-white text-xl font-medium hover:text-ccf-gold transition-colors mobile-link">Testimonials</a>
         </div>
-        <div class="absolute bottom-10 w-full px-8">
+
+        <div class="mt-auto pb-12">
             <a href="#contact"
                 class="block w-full bg-white text-ccf-wine text-center font-bold py-4 rounded-full shadow-lg hover:bg-ccf-gold hover:text-white transition-all mobile-link">
                 Book a Session
@@ -357,6 +406,188 @@
         </div>
     </section>
 
+    <!-- Founder's Quotes Section -->
+    <section id="quotes" class="py-20 bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal reveal-up">
+                <h2 class="text-ccf-gold uppercase tracking-widest text-sm font-semibold mb-2">Wisdom for the Journey
+                </h2>
+                <h3 class="text-3xl md:text-4xl font-bold text-ccf-wine">Founder's Inspiration</h3>
+            </div>
+
+            <div class="relative max-w-4xl mx-auto min-h-[300px] flex items-center justify-center">
+                <!-- Quote 1 -->
+                <div
+                    class="quote-slide absolute inset-0 w-full flex flex-col items-center justify-center transition-opacity duration-700 ease-in-out opacity-100 block">
+                    <div class="bg-ccf-cream p-8 md:p-12 rounded-2xl relative shadow-soft w-full">
+                        <div class="absolute -top-4 left-8 text-ccf-gold text-5xl opacity-40">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="text-xl md:text-2xl text-ccf-wine italic leading-relaxed mb-8 mt-4 text-center">
+                            "One of the most difficult parts of marriage is that some people are the wrong partner not
+                            the person they are married to, but nobody has ever accepted this truth, instead everyone
+                            sees their partner as the problem of their marriage.."
+                        </p>
+                        <div class="flex items-center justify-center">
+                            <div class="h-1 w-12 bg-ccf-gold rounded mr-4"></div>
+                            <div class="text-center">
+                                <p class="text-sm font-bold text-ccf-wine uppercase tracking-widest">Ayodele Adeoye</p>
+                                <p class="text-xs text-gray-500">Founder, CCF</p>
+                            </div>
+                            <div class="h-1 w-12 bg-ccf-gold rounded ml-4"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quote 2 -->
+                <div
+                    class="quote-slide absolute inset-0 w-full flex flex-col items-center justify-center transition-opacity duration-700 ease-in-out opacity-0 hidden">
+                    <div class="bg-ccf-cream p-8 md:p-12 rounded-2xl relative shadow-soft w-full">
+                        <div class="absolute -top-4 left-8 text-ccf-gold text-5xl opacity-40">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="text-xl md:text-2xl text-ccf-wine italic leading-relaxed mb-8 mt-4 text-center">
+                            "Talking back at your husband is neither a sign of knowing your rights nor an act of
+                            boldness.
+                            Rather, it may reflect a lack of proper home training or a misunderstanding of
+                            what it means to be virtuous. A true virtuous woman knows how to communicate with
+                            her husband with respect, even in moments of disagreement."
+                        </p>
+                        <div class="flex items-center justify-center">
+                            <div class="h-1 w-12 bg-ccf-gold rounded mr-4"></div>
+                            <div class="text-center">
+                                <p class="text-sm font-bold text-ccf-wine uppercase tracking-widest">Ayodele Adeoye</p>
+                                <p class="text-xs text-gray-500">Founder, CCF</p>
+                            </div>
+                            <div class="h-1 w-12 bg-ccf-gold rounded ml-4"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quote 3 -->
+                <div
+                    class="quote-slide absolute inset-0 w-full flex flex-col items-center justify-center transition-opacity duration-700 ease-in-out opacity-0 hidden">
+                    <div class="bg-ccf-cream p-8 md:p-12 rounded-2xl relative shadow-soft w-full">
+                        <div class="absolute -top-4 left-8 text-ccf-gold text-5xl opacity-40">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="text-xl md:text-2xl text-ccf-wine italic leading-relaxed mb-8 mt-4 text-center">
+                            "If you have a wife who has proven to be foolish please you are not bound to always take her
+                            advises and suggestions because of romantic sentiment, don't forget your decisions will
+                            affect
+                            all members of the family."
+                        </p>
+                        <div class="flex items-center justify-center">
+                            <div class="h-1 w-12 bg-ccf-gold rounded mr-4"></div>
+                            <div class="text-center">
+                                <p class="text-sm font-bold text-ccf-wine uppercase tracking-widest">Ayodele Adeoye</p>
+                                <p class="text-xs text-gray-500">Founder, CCF</p>
+                            </div>
+                            <div class="h-1 w-12 bg-ccf-gold rounded ml-4"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Quote 4 -->
+                <div
+                    class="quote-slide absolute inset-0 w-full flex flex-col items-center justify-center transition-opacity duration-700 ease-in-out opacity-0 hidden">
+                    <div class="bg-ccf-cream p-8 md:p-12 rounded-2xl relative shadow-soft w-full">
+                        <div class="absolute -top-4 left-8 text-ccf-gold text-5xl opacity-40">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="text-xl md:text-2xl text-ccf-wine italic leading-relaxed mb-8 mt-4 text-center">
+                            "Never protect the dignity of a man who has no dignity, if you do, you have given them
+                            ground never to change.
+                            A man committed adultery or beats you, as a wife you helped him cover it so that he will not
+                            lose his respect,
+                            listen to me, as much as you continue to help him cover it, he will never change. If such a
+                            man dies & goes to hell,
+                            his blood will be required from you by God."
+                        </p>
+                        <div class="flex items-center justify-center">
+                            <div class="h-1 w-12 bg-ccf-gold rounded mr-4"></div>
+                            <div class="text-center">
+                                <p class="text-sm font-bold text-ccf-wine uppercase tracking-widest">Ayodele Adeoye</p>
+                                <p class="text-xs text-gray-500">Founder, CCF</p>
+                            </div>
+                            <div class="h-1 w-12 bg-ccf-gold rounded ml-4"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quote 5 -->
+                <div
+                    class="quote-slide absolute inset-0 w-full flex flex-col items-center justify-center transition-opacity duration-700 ease-in-out opacity-0 hidden">
+                    <div class="bg-ccf-cream p-8 md:p-12 rounded-2xl relative shadow-soft w-full">
+                        <div class="absolute -top-4 left-8 text-ccf-gold text-5xl opacity-40">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="text-xl md:text-2xl text-ccf-wine italic leading-relaxed mb-8 mt-4 text-center">
+                            "Any marriage that does not bend your ego won't work, if you don't bend and compromise some
+                            of your principles and ideologies,
+                            you will either be alone in marriage or be married to yourself. While you are seeking for
+                            happiness from your spouse,
+                            try and make them happy too, happiness begat happiness. It is not only you that wants to be
+                            happy in marriage,
+                            your partner deserves to be happy too."
+                        </p>
+                        <div class="flex items-center justify-center">
+                            <div class="h-1 w-12 bg-ccf-gold rounded mr-4"></div>
+                            <div class="text-center">
+                                <p class="text-sm font-bold text-ccf-wine uppercase tracking-widest">Ayodele Adeoye</p>
+                                <p class="text-xs text-gray-500">Founder, CCF</p>
+                            </div>
+                            <div class="h-1 w-12 bg-ccf-gold rounded ml-4"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quote 5 -->
+                <div
+                    class="quote-slide absolute inset-0 w-full flex flex-col items-center justify-center transition-opacity duration-700 ease-in-out opacity-0 hidden">
+                    <div class="bg-ccf-cream p-8 md:p-12 rounded-2xl relative shadow-soft w-full">
+                        <div class="absolute -top-4 left-8 text-ccf-gold text-5xl opacity-40">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="text-xl md:text-2xl text-ccf-wine italic leading-relaxed mb-8 mt-4 text-center">
+                            "Emotional abusers in a relationship are sometimes the ones who normally insist they don't
+                            want 3rd parties in their relationship.
+                            They will be inflicting you with pain secretly but they won't want you to talk to anybody
+                            about it, this year you should know when
+                            to talk to someone please."
+                        </p>
+                        <div class="flex items-center justify-center">
+                            <div class="h-1 w-12 bg-ccf-gold rounded mr-4"></div>
+                            <div class="text-center">
+                                <p class="text-sm font-bold text-ccf-wine uppercase tracking-widest">Ayodele Adeoye</p>
+                                <p class="text-xs text-gray-500">Founder, CCF</p>
+                            </div>
+                            <div class="h-1 w-12 bg-ccf-gold rounded ml-4"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slider Controls -->
+            <div class="flex items-center justify-center gap-6 mt-12 pb-4">
+                <button id="quote-prev"
+                    class="w-10 h-10 rounded-full border-2 border-ccf-gold text-ccf-gold flex items-center justify-center hover:bg-ccf-gold hover:text-white transition-all focus:outline-none">
+                    <i class="fas fa-chevron-left text-sm"></i>
+                </button>
+                <div id="quote-dots" class="flex gap-3">
+                    <button class="quote-dot w-3 h-3 rounded-full bg-ccf-gold transition-all" data-index="0"></button>
+                    <button class="quote-dot w-3 h-3 rounded-full bg-ccf-wine/20 transition-all"
+                        data-index="1"></button>
+                    <button class="quote-dot w-3 h-3 rounded-full bg-ccf-wine/20 transition-all"
+                        data-index="2"></button>
+                </div>
+                <button id="quote-next"
+                    class="w-10 h-10 rounded-full border-2 border-ccf-gold text-ccf-gold flex items-center justify-center hover:bg-ccf-gold hover:text-white transition-all focus:outline-none">
+                    <i class="fas fa-chevron-right text-sm"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
     <!-- Testimonials Section -->
     <section id="testimonials" class="py-20 bg-ccf-wine text-white relative">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -473,18 +704,27 @@
                 </div>
 
                 <div
-                    class="bg-white rounded-2xl shadow-soft overflow-hidden group hover-card reveal reveal-scale delay-200">
-                    <div class="h-48 bg-gray-200 relative overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                            alt="Books">
-                        <div class="absolute top-4 right-4 bg-gray-600 text-white px-3 py-1 rounded text-sm font-bold">
-                            COMING SOON</div>
-                    </div>
-                    <div class="p-8">
-                        <h3 class="text-xl font-bold text-ccf-wine mb-2">Books & Resources Store</h3>
-                        <p class="text-gray-600 mb-4">Curated books and guides on marriage, intimacy, and faith.</p>
-                        <span class="text-gray-400 font-semibold cursor-not-allowed">Store Opening Soon</span>
+                    class="bg-white rounded-3xl shadow-soft overflow-hidden group hover-card reveal reveal-scale delay-200 p-2">
+                    <div class="grid grid-cols-2 gap-2 h-full">
+                        <div class="relative overflow-hidden rounded-2xl aspect-[2/3]">
+                            <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                alt="Book 1">
+                        </div>
+                        <div class="relative overflow-hidden rounded-2xl aspect-[2/3]">
+                            <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                alt="Book 2">
+                        </div>
+                        <div
+                            class="absolute inset-0 bg-ccf-wine/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white p-6">
+                            <h3 class="text-xl font-bold mb-2">Founder's Books</h3>
+                            <p class="text-sm text-center mb-4">Explore our full collection of inspirational resources.
+                            </p>
+                            <a href="books.html"
+                                class="bg-ccf-gold text-white px-6 py-2 rounded-full font-bold hover:bg-white hover:text-ccf-wine transition-all">Browse
+                                All →</a>
+                        </div>
                     </div>
                 </div>
             </div>

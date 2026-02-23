@@ -4,20 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About the Founder | Christian Couples Forum (CCF)</title>
-    <meta name="description"
-        content="Meet the founder of CCF, a visionary leader dedicated to strengthening marriages through faith and truth.">
-
-    <!-- Google Fonts -->
+    <title>Founder's Books | CCF</title>
+    <!-- Same head as index.html -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
-
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- Tailwind CSS (CDN) -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -25,10 +18,10 @@
                 extend: {
                     colors: {
                         'ccf-cream': '#F4F1DE',
-                        'ccf-gold': '#E07A5F', /* Warm Orange */
-                        'ccf-wine': '#1B263B', /* Navy */
-                        'ccf-beige': '#F4F1DE', /* Mapped to Cream for consistency */
-                        'ccf-text': '#1B263B', /* Text is now Navy */
+                        'ccf-gold': '#E07A5F',
+                        'ccf-wine': '#1B263B',
+                        'ccf-beige': '#F4F1DE',
+                        'ccf-text': '#1B263B',
                     },
                     fontFamily: {
                         sans: ['Poppins', 'sans-serif'],
@@ -40,14 +33,11 @@
             }
         }
     </script>
-
-    <!-- Custom Styles -->
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
-<body class="bg-ccf-cream text-ccf-text font-sans antialiased overflow-x-hidden">
-
-    <!-- Navigation (Will be handled by script.js but structure mirrored here for now) -->
+<body class="bg-ccf-cream text-ccf-text font-sans antialiased">
+    <!-- Navigation (Mirrored) -->
     <nav class="fixed w-full z-50 transition-all duration-300 glass" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
@@ -56,18 +46,16 @@
                         <img src="assets/images/Logo.png" alt="CCF" class="h-20 w-auto">
                     </a>
                 </div>
+                <!-- Desktop Menu -->
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-8">
                         <a href="index.html"
                             class="hover:text-ccf-gold px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</a>
-
-                        <!-- Dropdown Trigger -->
                         <div class="relative group">
                             <button
                                 class="hover:text-ccf-gold px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center focus:outline-none">
                                 About <i class="fas fa-chevron-down ml-1 text-xs"></i>
                             </button>
-                            <!-- Dropdown Menu -->
                             <div
                                 class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top-left z-50">
                                 <a href="index.html#about"
@@ -78,14 +66,11 @@
                                     the Founder</a>
                             </div>
                         </div>
-
                         <a href="index.html#services"
                             class="hover:text-ccf-gold px-3 py-2 rounded-md text-sm font-medium transition-colors">Focus</a>
-
-                        <!-- Resources Dropdown -->
                         <div class="relative group">
                             <button
-                                class="hover:text-ccf-gold px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center focus:outline-none">
+                                class="text-ccf-gold px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center focus:outline-none">
                                 Resources <i class="fas fa-chevron-down ml-1 text-xs"></i>
                             </button>
                             <div
@@ -94,18 +79,18 @@
                                     class="block px-4 py-2 text-sm text-gray-700 hover:bg-ccf-cream hover:text-ccf-wine">Bible
                                     Study Lessons</a>
                                 <a href="books.html"
-                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-ccf-cream hover:text-ccf-wine">Founder's
+                                    class="block px-4 py-2 text-sm text-gray-700 bg-ccf-cream text-ccf-wine">Founder's
                                     Books</a>
                             </div>
                         </div>
-
                         <a href="index.html#testimonials"
                             class="hover:text-ccf-gold px-3 py-2 rounded-md text-sm font-medium transition-colors">Testimonials</a>
                         <a href="index.html#contact"
-                            class="bg-ccf-wine text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-opacity-90 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">Book
+                            class="bg-ccf-wine text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-opacity-90 transition-all shadow-lg">Book
                             Session</a>
                     </div>
                 </div>
+                <!-- Mobile toggle -->
                 <div class="-mr-2 flex md:hidden">
                     <button type="button" id="mobile-menu-button"
                         class="inline-flex items-center justify-center p-2 rounded-md text-ccf-wine hover:text-ccf-gold focus:outline-none z-50 relative">
@@ -133,8 +118,9 @@
                     class="mobile-dropdown-menu hidden flex flex-col space-y-4 mt-4 ml-4 border-l-2 border-ccf-gold/30 pl-4">
                     <a href="index.html#about"
                         class="text-gray-300 text-lg hover:text-ccf-gold transition-colors mobile-link">About CCF</a>
-                    <a href="founder.html" class="text-ccf-gold text-lg font-bold transition-colors mobile-link">About
-                        the Founder</a>
+                    <a href="founder.html"
+                        class="text-gray-300 text-lg hover:text-ccf-gold transition-colors mobile-link">About the
+                        Founder</a>
                 </div>
             </div>
 
@@ -152,8 +138,7 @@
                     <a href="lessons.html"
                         class="text-gray-300 text-lg hover:text-ccf-gold transition-colors mobile-link">Bible Study
                         Lessons</a>
-                    <a href="books.html"
-                        class="text-gray-300 text-lg hover:text-ccf-gold transition-colors mobile-link">Founder's
+                    <a href="books.html" class="text-ccf-gold text-lg font-bold transition-colors mobile-link">Founder's
                         Books</a>
                 </div>
             </div>
@@ -170,115 +155,95 @@
         </div>
     </div>
 
-    <!-- Founder Hero -->
-    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 bg-ccf-wine text-white overflow-hidden">
-        <div class="absolute inset-0 z-0 opacity-20">
-            <img src="https://images.unsplash.com/photo-1507643179173-617d67456fd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
-                alt="Texture" class="w-full h-full object-cover">
+    <!-- Header -->
+    <section class="pt-32 pb-16 bg-ccf-wine text-white text-center">
+        <div class="max-w-7xl mx-auto px-4">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 reveal reveal-up">Founder's Books</h1>
+            <p class="text-lg text-gray-300 max-w-2xl mx-auto reveal reveal-up delay-100">Deep insights and practical
+                guides for building a thriving, God-honoring marriage.</p>
         </div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col lg:flex-row items-center">
-            <div class="lg:w-1/2 mb-10 lg:mb-0 reveal reveal-left">
-                <div class="relative inline-block">
-                    <img src="assets/images/founder.jpeg" alt="Founder of CCF"
-                        class="rounded-lg shadow-2xl relative z-10 w-full max-w-md mx-auto lg:mx-0">
+    </section>
+
+    <!-- Books Grid -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                <div class="reveal reveal-up group">
                     <div
-                        class="absolute -bottom-6 -right-6 w-full h-full border-4 border-ccf-gold rounded-lg z-0 hidden lg:block">
+                        class="relative bg-white rounded-2xl shadow-soft overflow-hidden transition-all duration-300 transform group-hover:-translate-y-2 group-hover:shadow-xl">
+                        <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="The Sacred Bond Cover" class="w-full aspect-[2/3] object-cover">
+                        <div
+                            class="absolute inset-0 bg-ccf-wine/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <a href="#"
+                                class="bg-white text-ccf-wine px-6 py-2 rounded-full font-bold text-sm transform scale-90 group-hover:scale-100 transition-all">Buy
+                                Now</a>
+                        </div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <p class="font-bold text-ccf-wine">The Sacred Bond</p>
+                        <p class="text-ccf-gold font-bold mt-1">₦5,000</p>
                     </div>
                 </div>
-            </div>
-            <div class="lg:w-1/2 lg:pl-16 text-center lg:text-left reveal reveal-right">
-                <span class="text-ccf-gold font-medium tracking-widest uppercase text-sm mb-4 block">Visionary
-                    Leadership</span>
-                <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">Meet the Heart Behind <span
-                        class="text-ccf-gold">CCF</span></h1>
-                <p class="text-lg text-gray-300 leading-relaxed mb-8">
-                    "I believe every marriage has a divine purpose. My mission is to help you uncover it, heal from the
-                    past, and walk in the fullness of God's design for intimacy and love."
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                    <a href="#story"
-                        class="px-8 py-3 bg-ccf-gold text-white rounded-full font-semibold hover:bg-yellow-600 transition-all shadow-lg text-center">
-                        Read My Story
-                    </a>
+
+                <div class="reveal reveal-up delay-100 group">
+                    <div
+                        class="relative bg-white rounded-2xl shadow-soft overflow-hidden transition-all duration-300 transform group-hover:-translate-y-2 group-hover:shadow-xl">
+                        <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Words of Grace Cover" class="w-full aspect-[2/3] object-cover">
+                        <div
+                            class="absolute inset-0 bg-ccf-wine/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <a href="#"
+                                class="bg-white text-ccf-wine px-6 py-2 rounded-full font-bold text-sm transform scale-90 group-hover:scale-100 transition-all">Buy
+                                Now</a>
+                        </div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <p class="font-bold text-ccf-wine">Words of Grace</p>
+                        <p class="text-ccf-gold font-bold mt-1">₦4,500</p>
+                    </div>
+                </div>
+
+                <div class="reveal reveal-up delay-200 group">
+                    <div
+                        class="relative bg-white rounded-2xl shadow-soft overflow-hidden transition-all duration-300 transform group-hover:-translate-y-2 group-hover:shadow-xl">
+                        <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Covenant Love Cover" class="w-full aspect-[2/3] object-cover">
+                        <div
+                            class="absolute inset-0 bg-ccf-wine/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <a href="#"
+                                class="bg-white text-ccf-wine px-6 py-2 rounded-full font-bold text-sm transform scale-90 group-hover:scale-100 transition-all">Buy
+                                Now</a>
+                        </div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <p class="font-bold text-ccf-wine">Covenant Love</p>
+                        <p class="text-ccf-gold font-bold mt-1">₦6,000</p>
+                    </div>
+                </div>
+
+                <div class="reveal reveal-up delay-300 group">
+                    <div
+                        class="relative bg-white rounded-2xl shadow-soft overflow-hidden transition-all duration-300 transform group-hover:-translate-y-2 group-hover:shadow-xl">
+                        <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Building Foundations Cover" class="w-full aspect-[2/3] object-cover">
+                        <div
+                            class="absolute inset-0 bg-ccf-wine/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <a href="#"
+                                class="bg-white text-ccf-wine px-6 py-2 rounded-full font-bold text-sm transform scale-90 group-hover:scale-100 transition-all">Buy
+                                Now</a>
+                        </div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <p class="font-bold text-ccf-wine">Building Foundations</p>
+                        <p class="text-ccf-gold font-bold mt-1">₦5,500</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Biography / Story Section -->
-    <section id="story" class="py-20 bg-white">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="reveal reveal-up">
-                <h2 class="text-3xl font-bold text-ccf-wine mb-8 text-center">A Journey of Faith & Restoration</h2>
-                <div class="prose prose-lg mx-auto text-gray-600 leading-relaxed">
-                    <p class="mb-6">
-                        Hello, I am Ayodele Adeoye. For over 8 years, I have been passionate about seeing marriages
-                        thrive.
-                        This passion wasn't born out of a perfect life, but through witnessing the transformative power
-                        of God's
-                        love in the midst of brokenness.
-                    </p>
-                    <p class="mb-6">
-                        Like many, I saw families struggle with silence, unresolved conflict,
-                        and emotional distance. I realized that the church often taught us
-                        <em>to</em> stay married, but rarely taught us
-                        <em>how</em> to be happily married—especially when it came to the delicate topics of intimacy
-                        and deep emotional connection.
-                    </p>
-                    <p class="mb-6">
-                        That gap in support birthed the Christian Couples Forum. My vision was to create a sanctuary—a
-                        safe, confidential haven—where couples could take off their masks and deal with real issues.
-                    </p>
-                    <blockquote class="border-l-4 border-ccf-gold pl-6 italic text-gray-800 my-10 text-xl font-light">
-                        "Healing begins when we feel safe enough to speak the truth in love."
-                    </blockquote>
-                    <p>
-                        Today, I am honored to walk alongside couples as they navigate the beautiful, messy, and sacred
-                        journey of marriage. Whether you are newlyweds or celebrating your golden anniversary, my heart
-                        is to serve you with wisdom, grace, and unwavering faith.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Meet the Family Section -->
-    <section class="py-20 bg-ccf-cream">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col lg:flex-row items-center">
-                <!-- Text Content -->
-                <div class="lg:w-1/2 order-2 lg:order-1 reveal reveal-right">
-                    <h2 class="text-ccf-gold uppercase tracking-widest text-sm font-semibold mb-2">My Support System
-                    </h2>
-                    <h3 class="text-3xl md:text-4xl font-bold text-ccf-wine mb-6">Meet the Family</h3>
-                    <p class="text-gray-600 leading-relaxed mb-6">
-                        Behind every ministry is a family that believes in the vision.
-                        I am blessed to share this journey with my amazing spouse, Adeoye Esther,
-                        who has been my rock, prayer partner, and greatest encourager for 18 years.
-                    </p>
-                    <p class="text-gray-600 leading-relaxed mb-8">
-                        Together, we have been gifted with wonderful children who constantly teach us about grace,
-                        patience, and unconditional love. Our home is our first ministry, and we strive to model
-                        the principles of CCF within our own walls—imperfectly, but authentically.
-                    </p>
-                    <div class="flex items-center space-x-4">
-                        <div class="h-1 w-12 bg-ccf-gold rounded"></div>
-                        <span class="text-ccf-wine font-semibold text-lg">The Ayodele's Family</span>
-                    </div>
-                </div>
-                <!-- Image -->
-                <div class="lg:w-1/2 lg:pl-12 order-1 lg:order-2 mb-10 lg:mb-0 reveal reveal-left">
-                    <div class="relative">
-                        <img src="assets/images/Spouse.jpeg" alt="The Founder's Family"
-                            class="rounded-2xl shadow-xl z-10 relative">
-                        <div class="absolute -top-4 -right-4 w-24 h-24 bg-ccf-gold/20 rounded-full z-0"></div>
-                        <div class="absolute -bottom-4 -left-4 w-32 h-32 bg-ccf-wine/10 rounded-full z-0"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Footer (Mirrored) -->
+    <!-- Footer -->
     <footer class="bg-gray-900 text-white pt-16 pb-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
@@ -293,10 +258,10 @@
                 <div>
                     <h4 class="text-lg font-semibold mb-6 text-ccf-gold">Quick Links</h4>
                     <ul class="space-y-3 text-sm text-gray-400">
-                        <li><a href="index.html#about" class="hover:text-white transition-colors">About Us</a></li>
-                        <li><a href="index.html#services" class="hover:text-white transition-colors">Focus</a></li>
-                        <li><a href="index.html#events" class="hover:text-white transition-colors">Events</a></li>
-                        <li><a href="index.html#contact" class="hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="#about" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">Focus</a></li>
+                        <li><a href="#events" class="hover:text-white transition-colors">Events</a></li>
+                        <li><a href="#contact" class="hover:text-white transition-colors">Contact</a></li>
                     </ul>
                 </div>
                 <div>
@@ -312,15 +277,22 @@
                             class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-ccf-gold hover:text-white transition-all"><i
                                 class="fab fa-youtube"></i></a>
                     </div>
+                    <p class="text-gray-500 text-xs">
+                        <i class="fas fa-lock mr-2"></i> All sessions and inquiries are 100% confidential.
+                    </p>
                 </div>
             </div>
             <div class="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
                 <p>&copy; 2026 Christian Couples Forum. All rights reserved.</p>
+                <div class="mt-2 space-x-4">
+                    <a href="#" class="hover:text-gray-300">Privacy Policy</a>
+                    <a href="#" class="hover:text-gray-300">Terms of Service</a>
+                </div>
             </div>
         </div>
     </footer>
 
-    <!-- Scripts -->
+
     <script src="assets/js/script.js"></script>
 </body>
 

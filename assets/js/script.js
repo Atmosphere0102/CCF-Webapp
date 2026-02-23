@@ -9,33 +9,52 @@ document.addEventListener('DOMContentLoaded', () => {
         mobileMenuButton.addEventListener('click', () => {
             const icon = mobileMenuButton.querySelector('i');
 
-            // Toggle menu visibility via transform
             if (mobileMenuOverlay.classList.contains('translate-x-full')) {
-                // Open Menu
                 mobileMenuOverlay.classList.remove('translate-x-full');
                 icon.classList.remove('fa-bars');
                 icon.classList.add('fa-times');
                 icon.classList.remove('text-ccf-wine');
-                icon.classList.add('text-white'); // Change icon color to visible on overlay
+                icon.classList.add('text-white');
+                document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
             } else {
-                // Close Menu
                 mobileMenuOverlay.classList.add('translate-x-full');
                 icon.classList.remove('fa-times');
                 icon.classList.add('fa-bars');
                 icon.classList.remove('text-white');
                 icon.classList.add('text-ccf-wine');
+                document.body.style.overflow = '';
             }
         });
 
-        // Close menu when a link is clicked
+        // Mobile Dropdown Toggle Logic
+        const mobileDropdowns = document.querySelectorAll('.mobile-dropdown-trigger');
+        mobileDropdowns.forEach(trigger => {
+            trigger.addEventListener('click', (e) => {
+                e.preventDefault();
+                const parent = trigger.parentElement;
+                const menu = parent.querySelector('.mobile-dropdown-menu');
+                const icon = trigger.querySelector('.fa-chevron-down');
+
+                // Toggle current menu
+                menu.classList.toggle('hidden');
+                if (icon) {
+                    icon.classList.toggle('rotate-180 transition-transform duration-300');
+                }
+            });
+        });
+
         mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
+            link.addEventListener('click', (e) => {
+                // If it's a dropdown trigger, don't close the whole overlay
+                if (link.classList.contains('mobile-dropdown-trigger')) return;
+
                 mobileMenuOverlay.classList.add('translate-x-full');
                 const icon = mobileMenuButton.querySelector('i');
                 icon.classList.remove('fa-times');
                 icon.classList.add('fa-bars');
                 icon.classList.remove('text-white');
                 icon.classList.add('text-ccf-wine');
+                document.body.style.overflow = '';
             });
         });
     }
@@ -237,6 +256,95 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function isValidEmail(email) {
         return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
+    // Quotes Carousel (Reuse similar logic for consistency)
+    const quoteSlides = document.querySelectorAll('.quote-slide');
+    const quoteDots = document.querySelectorAll('.quote-dot');
+    const qPrevBtn = document.getElementById('quote-prev');
+    const qNextBtn = document.getElementById('quote-next');
+    let curQuote = 0;
+    const totalQuotes = quoteSlides.length;
+    const qSlideDuration = 6000;
+    let qAutoTimer = null;
+
+    const goToQuote = (index) => {
+        if (totalQuotes === 0) return;
+
+        // Hide current
+        quoteSlides[curQuote].style.opacity = '0';
+        quoteSlides[curQuote].style.pointerEvents = 'none';
+
+        setTimeout(() => {
+            quoteSlides[curQuote].classList.add('hidden');
+            quoteSlides[curQuote].classList.remove('block');
+
+            curQuote = (index + totalQuotes) % totalQuotes;
+
+            quoteSlides[curQuote].classList.remove('hidden');
+            quoteSlides[curQuote].classList.add('block');
+            void quoteSlides[curQuote].offsetWidth;
+            quoteSlides[curQuote].style.opacity = '1';
+            quoteSlides[curQuote].style.pointerEvents = '';
+
+            // Update dots
+            quoteDots.forEach((dot, i) => {
+                if (i === curQuote) {
+                    dot.classList.add('bg-ccf-gold');
+                    dot.classList.remove('bg-ccf-wine/20');
+                    dot.style.transform = 'scale(1.3)';
+                } else {
+                    dot.classList.remove('bg-ccf-gold');
+                    dot.classList.add('bg-ccf-wine/20');
+                    dot.style.transform = 'scale(1)';
+                }
+            });
+        }, 350);
+    };
+
+    const startQAuto = () => {
+        clearInterval(qAutoTimer);
+        qAutoTimer = setInterval(() => {
+            goToQuote(curQuote + 1);
+        }, qSlideDuration);
+    };
+
+    if (totalQuotes > 0) {
+        quoteSlides.forEach((slide, i) => {
+            slide.style.opacity = i === 0 ? '1' : '0';
+            slide.style.pointerEvents = i === 0 ? '' : 'none';
+            if (i !== 0) {
+                slide.classList.add('hidden');
+                slide.classList.remove('block');
+            } else {
+                slide.classList.remove('hidden');
+                slide.classList.add('block');
+            }
+        });
+
+        startQAuto();
+
+        if (qPrevBtn) {
+            qPrevBtn.addEventListener('click', () => {
+                goToQuote(curQuote - 1);
+                startQAuto();
+            });
+        }
+        if (qNextBtn) {
+            qNextBtn.addEventListener('click', () => {
+                goToQuote(curQuote + 1);
+                startQAuto();
+            });
+        }
+        quoteDots.forEach((dot) => {
+            dot.addEventListener('click', () => {
+                const idx = parseInt(dot.dataset.index, 10);
+                if (idx !== curQuote) {
+                    goToQuote(idx);
+                    startQAuto();
+                }
+            });
+        });
     }
 
     // Smooth scrolling for anchor links (if browser support needs help or custom offset)
